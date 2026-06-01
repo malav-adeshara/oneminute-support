@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Send, User } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 
@@ -53,20 +53,75 @@ const Hero = () => {
 
                         <div className="flex-1 p-6 overflow-y-auto space-y-6 bg-zinc-950/30">
                             <div className="flex w-full flex-col items-start">
-                                <div className='w-8 h-8 rounded-full flex items-center justify-center shrink-0 border border-zinc-800 bg-zinc-800'>
-                                    <Image
-                                        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                        alt="Support Agent"
-                                        width={40}
-                                        height={40}
-                                        className='w-full h-full object-cover rounded-full'
-                                    />
+                                <div className="flex max-w-[85%] gap-3 flex-row">
+                                    <div className='w-8 h-8 rounded-full flex items-center justify-center shrink-0 border border-zinc-800 bg-zinc-800'>
+                                        <Image
+                                            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                            alt="Support Agent"
+                                            width={40}
+                                            height={40}
+                                            className='w-full h-full object-cover rounded-full'
+                                        />
+                                    </div>
+
+                                    <div className='space-y-2'>
+                                        <div className='p-4 rounded-2xl text-sm leading-relaxed shadow-sm bg-white text-zinc-900 rounded-tl-sm'>
+                                            Hello! How can I help you today?
+                                        </div>
+
+                                        <div className='flex flex-wrap gap-2 pt-1 ml-1'>
+                                            <span className="px-3 py-1.5 rounded-full border border-zinc-700 bg-zinc-800/50 text-zinc-300 text-xs font-medium cursor-default">
+                                                FAQ
+                                            </span>
+                                            <span className="px-3 py-1.5 rounded-full border border-zinc-700 bg-zinc-800/50 text-zinc-300 text-xs font-medium cursor-default">
+                                                Pricing
+                                            </span>
+                                            <span className="px-3 py-1.5 rounded-full border border-zinc-700 bg-zinc-800/50 text-zinc-300 text-xs font-medium cursor-default">
+                                                Support
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div className='space-y-2'>
-                                    <div className='p-4 rounded-2xl text-sm leading-relaxed shadow-sm bg-white text-zinc-900 rounded-tl-sm'>
-                                        Hello! How can I help you today?
+                                <div className="flex w-full flex-col items-end">
+                                    <div className='flex max-w-[85%] gap-3 flex-row-reverse'>
+                                        <div className='w-8 h-8 rounded-full flex items-center justify-center shrink-0 border border-white/5 bg-zinc-800'>
+                                            <User className='w-4 h-4 text-zinc-400' />
+                                        </div>
+                                        <div className='p-4 rounded-2xl text-sm leading-relaxed shadow-sm bg-zinc-800 text-zinc-200 rounded-tr-sm'>
+                                            I need some information about oneminute stack
+                                        </div>
                                     </div>
+                                </div>
+
+                                <div className='flex w-full flex-col items-start mt-5'>
+                                    <div className='flex max-w-[85%] gap-3 flex-row'>
+                                        <div className='w-8 h-8 rounded-full flex items-center justify-center shrink-0 border border-white/5 overflow-hidden'>
+                                            <Image
+                                                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                                alt="Support Agent"
+                                                width={40}
+                                                height={40}
+                                                className='w-full h-full object-cover rounded-full'
+                                            />
+                                        </div>
+                                        <div className='p-4 rounded-2xl text-sm leading-relaxed shadow-sm bg-white text-zinc-900 rounded-tl-sm'>
+                                            OneMinute Stack is an integrated ecosystem designed to enhance developer efficiency. It includes tools like OneMinute Logs for real-time monitoring and Becodemy for community support.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='p-4 bg-[#0A0A0E] border-t border-white/5 shrink-0'>
+                            <div className="relative">
+                                <div className="min-h-12.5 w-full px-4 py-3 text-sm bg-zinc-900/50 border border-white/10 rounded-xl text-zinc-500 flex items-center justify-between">
+                                    <span>
+                                        Type a message...
+                                    </span>
+                                    <button className="h-8 w-8 rounded-lg bg-zinc-800 flex items-center justify-center text-zinc-500 cursor-default">
+                                        <Send className="w-4 h-4" />
+                                    </button>
                                 </div>
                             </div>
                         </div>
