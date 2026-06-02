@@ -1,3 +1,4 @@
+import Features from '@/components/landing/features';
 import Hero from '@/components/landing/hero';
 import Navbar from '@/components/landing/nav';
 import SocialProof from '@/components/landing/social';
