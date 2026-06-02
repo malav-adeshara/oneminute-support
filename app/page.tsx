@@ -9,6 +9,7 @@ export default function Page() {
       <Navbar />
       <Hero />
       <SocialProof />
+      <Features />
     </main>
   );
 }
