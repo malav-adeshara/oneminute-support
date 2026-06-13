@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import scalekit from "../../../../lib/scalekit";
-
-
+import scalekit from "@/lib/scalekit";
+import { db } from "@/db/client";
+import { user as User } from "@/db/schema";
+import { eq } from "drizzle-orm";
 
 export async function GET(req: NextRequest) {
     const { searchParams } = req.nextUrl;
@@ -43,8 +44,36 @@ export async function GET(req: NextRequest) {
             );
         }
 
+        const existingUser = await db.select().from(User).where(eq(User.email, user.email));
 
+        if (existingUser.length === 0) {
+            await db.insert(User).values({
+                name: user?.name || "anonymous",
+                email: user.email,
+                organization_id: organizationId,
+            })
+        }
+
+        const response = NextResponse.redirect(new URL("/", req.url));
+        const userSession = {
+            email: user.email,
+            organization_id: organizationId,
+        };
+
+        response.cookies.set("user_session", JSON.stringify(userSession), {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "lax",
+            path: "/",
+            maxAge: 60 * 60 * 24 * 7,
+        });
+
+        return response;
     } catch (error) {
-
+        console.error("Error exchanging code:", error);
+        return NextResponse.json(
+            {error: "Failed to authenticate user."},
+            {status: 500},
+        );
     }
 }

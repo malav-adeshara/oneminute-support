@@ -1,4 +1,89 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Next.js build / output
+.next/
+out/
+build/
+.vercel/
+.vercel_build_output/
+
+# Drizzle ORM / Drizzle-kit generated output (adjust if you track migrations)
+drizzle/
+
+# Environment variables
+.env
+.env.*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.envrc
+
+# Neon / DB (local caches or credentials)
+.neon/
+neon-*
+
+# TypeScript build cache
+*.tsbuildinfo
+
+# Logs
+logs
+*.log
+.npmrc-debug.log*
+lerna-debug.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Testing
+coverage/
+.nyc_output/
+
+# Build / cache
+dist/
+tmp/
+temp/
+.cache/
+.parcel-cache/
+
+# Debug / runtime
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Storybook
+storybook-static/
+
+# Lockfile and package manager artifacts that may be unwanted (optional)
+# .pnp.cjs
+# .pnp.js
+
+# Database files
+*.sqlite
+*.sqlite3
+*.db
+
+# JetBrains
+*.iml
+
+# Editor swap files
+*.swp
+*~
+
+# End of file# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
 /node_modules
